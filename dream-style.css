@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#background {
+    padding: 20px;
+    transition: background 1s ease-in-out, background-position 1s ease-in-out;
+}
+
+/* Smooth Motion Gradient Animations for Each Theme */
+
+/* Morning Theme */
+.morning-theme {
+    background: linear-gradient(108deg, #ff5f6d, #ff9a8b, #ffb347, #ffdc5c);
+    background-size: 240% 240%;
+    animation: morning-motion 20s ease-in-out infinite;
+}
+@keyframes morning-motion {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Day Theme */
+.day-theme {
+    background: linear-gradient(108deg, #ff8c00, #ffb347, #fdd835);
+    background-size: 180% 180%;
+    animation: day-motion 20s ease-in-out infinite;
+}
+@keyframes day-motion {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Evening Theme */
+.evening-theme {
+    background: linear-gradient(108deg, #8e44ad, #f39c12, #2c3e50, #ff6f61);
+    background-size: 240% 240%;
+    animation: evening-motion 20s ease-in-out infinite;
+}
+@keyframes evening-motion {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Night Theme */
+.night-theme {
+    color: #fff;
+    background: linear-gradient(108deg, #0f2027, #203a43, #2c5364);
+    background-size: 180% 180%;
+    animation: gradient-animation 20s ease-in-out infinite;
+}
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Midnight Theme */
+.midnight-theme {
+    background: linear-gradient(108deg, #000000, #0a2342, #1e3a5f);
+    background-size: 180% 180%;
+    animation: midnight-motion 20s ease-in-out infinite;
+}
+@keyframes midnight-motion {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Doodle Animation */
+#doodle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+#doodle {
+    width: 100px;
+    height: auto;
+    animation: doodle-motion 20s linear infinite;
+}
+
+@keyframes doodle-motion {
+    0% { transform: translateX(-25%); }
+    25% { transform: translateX(25%); }
+    50% { transform: translateX(-25%); }
+    75% { transform: translateX(25%); }
+    100% { transform: translateX(-25%); }
+}
+
+/* Schedule Table */
+.schedule-container {
+    margin: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent table */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+table th, table td {
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: left;
+    color: #fff;
+    font-size: 18px;
+}
+
+table th {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+table td {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    padding: 10PX;
+    color: #ffffff55;
+    background-color: #00000022;
+    border-radius: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    #doodle {
+        width: 60px;
+    }
+}
