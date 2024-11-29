@@ -5,6 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Dream Schedule</title>
     <link rel="stylesheet" href="dream-style.css">
+    <style>
+        /* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#background {
+    padding: 20px;
+    transition: background 1s ease-in-out, background-position 1s ease-in-out;
+}
+
+/* Smooth Motion Gradient Animations for Each Theme */
+
+/* Morning Theme */
+.morning-theme {
+    background: linear-gradient(108deg, #ff5f6d, #ff9a8b, #ffb347, #ffdc5c);
+    background-size: 240% 240%;
+    animation: morning-motion 20s ease-in-out infinite;
+}
+@keyframes morning-motion {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Day Theme */
+.day-theme {
+    background: linear-gradient(108deg, #ff8c00, #ffb347, #fdd835);
+    background-size: 180% 180%;
+    animation: day-motion 20s ease-in-out infinite;
+}
+@keyframes day-motion {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Evening Theme */
+.evening-theme {
+    background: linear-gradient(108deg, #8e44ad, #f39c12, #2c3e50, #ff6f61);
+    background-size: 240% 240%;
+    animation: evening-motion 20s ease-in-out infinite;
+}
+@keyframes evening-motion {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Night Theme */
+.night-theme {
+    color: #fff;
+    background: linear-gradient(108deg, #0f2027, #203a43, #2c5364);
+    background-size: 180% 180%;
+    animation: gradient-animation 20s ease-in-out infinite;
+}
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Midnight Theme */
+.midnight-theme {
+    background: linear-gradient(108deg, #000000, #0a2342, #1e3a5f);
+    background-size: 180% 180%;
+    animation: midnight-motion 20s ease-in-out infinite;
+}
+@keyframes midnight-motion {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Doodle Animation */
+#doodle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+#doodle {
+    width: 100px;
+    height: auto;
+    animation: doodle-motion 20s linear infinite;
+}
+
+@keyframes doodle-motion {
+    0% { transform: translateX(-25%); }
+    25% { transform: translateX(25%); }
+    50% { transform: translateX(-25%); }
+    75% { transform: translateX(25%); }
+    100% { transform: translateX(-25%); }
+}
+
+/* Schedule Table */
+.schedule-container {
+    margin: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent table */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+table th, table td {
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: left;
+    color: #fff;
+    font-size: 18px;
+}
+
+table th {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+table td {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    padding: 10PX;
+    color: #ffffff55;
+    background-color: #00000022;
+    border-radius: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    #doodle {
+        width: 60px;
+    }
+}
+
+    </style>
 </head>
 <body>
     <div id="background" class="morning-theme">
@@ -22,80 +188,90 @@
                 <thead>
                     <tr>
                         <th>Time</th>
-                        <th>Activity</th>
-                        <th>Details</th>
+                        <th>Tasks</th>
+                        <th>Desciption</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>5:30 – 6:00 AM</td>
-                        <td>Morning Refresh</td>
+                        <td>🌅 5:30 AM – 6:00 AM</td>
+                        <td>Morning Charge-Up</td>
                         <td>Light exercise to start your day.</td>
                     </tr>
                     <tr>
-                        <td>6:00 – 7:30 AM</td>
-                        <td>Study Goals</td>
-                        <td>Focused academic session.</td>
+                        <td>📚 6:00 AM – 6:30 AM</td>
+                        <td>Extra work</td>
+                        <td>Do some extra work to get ahead.</td>
                     </tr>
                     <tr>
-                        <td>7:30 – 9:00 AM</td>
-                        <td>Creative Cuisine</td>
-                        <td>Prepare and enjoy breakfast.</td>
+                        <td>📚 6:30 AM – 7:30 AM</td>
+                        <td>Focus Time</td>
+                        <td>Dive into core academics.</td>
                     </tr>
                     <tr>
-                        <td>9:00 – 11:00 AM</td>
-                        <td>Coding Class</td>
-                        <td>Explore and build coding skills.</td>
+                        <td>🍳 7:30 AM – 9:00 AM</td>
+                        <td>Fuel Up</td>
+                        <td>Prepare and enjoy a healthy breakfast.</td>
                     </tr>
                     <tr>
-                        <td>11:00 AM – 12:30 PM</td>
-                        <td>Second Study Session</td>
-                        <td>Deep dive into academics.</td>
+                        <td>🎹 9:00 AM – 10:00 AM</td>
+                        <td>Melody Hour</td>
+                        <td>Practice piano and unwind.</td>
                     </tr>
                     <tr>
-                        <td>12:30 – 1:30 PM</td>
+                        <td>💻 10:00 AM – 11:30 PM</td>
+                        <td>Code Mastery</td>
+                        <td>Engage in your coding class or projects.</td>
+                    </tr>
+                    <tr>
+                        <td>🔍 11:30 AM – 13:00 PM</td>
+                        <td>Deep Dive</td>
+                        <td>Academic problem-solving and revision.</td>
+                    </tr>
+                    <tr>
+                        <td>🍴 13:00 PM – 14:30 PM</td>
                         <td>Lunch Break</td>
-                        <td>Prepare and enjoy a hearty meal.</td>
+                        <td>Prepare and savor your lunch, then relax.</td>
                     </tr>
                     <tr>
-                        <td>1:30 – 2:30 PM</td>
-                        <td>Gaming Time</td>
-                        <td>Relax and enjoy your favorite game.</td>
+                        <td>🎮 14:30 PM – 16:00 PM</td>
+                        <td>Game Quest</td>
+                        <td>Immerse in gaming adventures.</td>
                     </tr>
                     <tr>
-                        <td>2:30 – 4:00 PM</td>
-                        <td>Video Editing</td>
-                        <td>Create and polish content for your channel.</td>
+                        <td>😴 16:00 PM – 17:00 PM</td>
+                        <td>Power Nap</td>
+                        <td>Recharge with a short sleep.</td>
                     </tr>
                     <tr>
-                        <td>4:00 – 5:00 PM</td>
-                        <td>Afternoon Rest</td>
-                        <td>Recharge with a nap.</td>
+                        <td>📝 17:00 PM – 17:30 PM</td>
+                        <td>Reflection Time</td>
+                        <td>Journal or plan content for your channel.</td>
                     </tr>
                     <tr>
-                        <td>5:00 – 5:30 PM</td>
-                        <td>Creative Exploration</td>
-                        <td>Try something new and fun.</td>
+                        <td>💪 17:30 PM – 18:30 PM</td>
+                        <td>Evening Boost</td>
+                        <td>Strength training or outdoor exercise.</td>
                     </tr>
                     <tr>
-                        <td>5:30 – 6:30 PM</td>
-                        <td>Evening Exercise</td>
-                        <td>Stay active and energized.</td>
+                        <td>📖 18:30 PM – 20:00 PM</td>
+                        <td>Knowledge Hour</td>
+                        <td>Review and prepare academic notes.</td>
                     </tr>
                     <tr>
-                        <td>6:30 – 8:00 PM</td>
-                        <td>Dinner Prep</td>
-                        <td>Cook and enjoy dinner.</td>
+                        <td>🍽️ 20:00 PM – 21:00 PM</td>
+                        <td>Dinner Delight</td>
+                        <td>Cook, enjoy dinner, and relax.</td>
                     </tr>
                     <tr>
-                        <td>8:00 – 9:00 PM</td>
-                        <td>Piano Class</td>
-                        <td>Learn and practice music.</td>
+                        <td>🎥 21:00 PM – 22:30 PM</td>
+                        <td>Creative Zone</td>
+                        <td>Edit videos or work on creative ideas.</td>
                     </tr>
                     <tr>
-                        <td>9:00 – 10:30 PM</td>
-                        <td>Final Study</td>
-                        <td>Wrap up the day with academic focus.</td>
+                        <td>🌙 22:30 PM – 05:30 AM</td>
+                        <td>Rest Mode</td>
+                        <td>Recharge with a good night’s sleep.</td>
                     </tr>
                 </tbody>
             </table>
@@ -105,5 +281,74 @@
         </footer>
     </div>
     <script src="dream-schedule.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const background = document.getElementById("background");
+    const greeting = document.getElementById("greeting");
+    const thought = document.getElementById("thought");
+    const doodle = document.getElementById("doodle");
+
+    const thoughts = {
+        morning: "The morning is full of possibilities. Seize the day!",
+        day: "This is your time to shine. Stay focused!",
+        evening: "Reflect on your progress and enjoy the sunset.",
+        night: "Relax and recharge. You’ve earned this.",
+        midnight: "The stars are watching. Dream big!"
+    };
+
+    const doodles = {
+        morning: "morning-sun.png",
+        day: "day-cloud.png",
+        evening: "sunset.png",
+        night: "moon-stars.png",
+        midnight: "stars.png"
+    };
+
+    const updateTheme = () => {
+        const hours = new Date().getHours();
+        let themeClass = "";
+        let greetingText = "";
+        let thoughtText = "";
+        let doodleSrc = "";
+
+        if (hours >= 5 && hours < 12) {
+            themeClass = "morning-theme";
+            greetingText = "Good Morning, V! 🌞";
+            thoughtText = thoughts.morning;
+            doodleSrc = doodles.morning;
+        } else if (hours >= 12 && hours < 17) {
+            themeClass = "day-theme";
+            greetingText = "Good Afternoon, V! ☀️";
+            thoughtText = thoughts.day;
+            doodleSrc = doodles.day;
+        } else if (hours >= 17 && hours < 20) {
+            themeClass = "evening-theme";
+            greetingText = "Good Evening, V! 🌅";
+            thoughtText = thoughts.evening;
+            doodleSrc = doodles.evening;
+        } else if (hours >= 20 || hours < 2) {
+            themeClass = "night-theme";
+            greetingText = "Good Night, V! 🌙";
+            thoughtText = thoughts.night;
+            doodleSrc = doodles.night;
+        } else {
+            themeClass = "midnight-theme";
+            greetingText = "Welcome to Midnight, V! 🕛";
+            thoughtText = thoughts.midnight;
+            doodleSrc = doodles.midnight;
+        }
+
+        // Update theme, greeting, thought, and doodle
+        background.className = themeClass;
+        greeting.textContent = greetingText;
+        thought.textContent = thoughtText;
+        doodle.src = doodleSrc;
+    };
+
+    updateTheme();
+    setInterval(updateTheme, 60000); // Update every minute
+});
+
+    </script>
 </body>
 </html>
